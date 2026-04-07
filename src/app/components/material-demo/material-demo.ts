@@ -5,8 +5,10 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Login } from '../login/login';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 export interface PeriodicElement {
   name: string;
@@ -37,7 +39,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
     MatProgressSpinnerModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './material-demo.html',
   styleUrl: './material-demo.css',
@@ -58,4 +63,15 @@ export class MaterialDemo {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  // ------------------
+  private _formBuilder = inject(FormBuilder);
+  firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+
+
 }

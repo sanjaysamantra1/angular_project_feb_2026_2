@@ -1,0 +1,8 @@
+<div class="border border-3 rounded-3 p-3 text-center col-sm-4 offset-4">
+  <h1>Counter Example</h1>
+  <h2>Count: {{count$ | async}}</h2>
+
+  <button class="btn btn-secondary" (click)="decrementCount()">Decrement</button>
+  <button class="btn btn-danger mx-2" (click)="resetCount()">Reset</button>
+  <button class="btn btn-primary" (click)="incrementCount()">Increment</button>
+</div>
