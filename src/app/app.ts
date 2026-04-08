@@ -4,6 +4,7 @@ import { Demo1 } from './components/demo1/demo1';
 import { MaterialDemo } from './components/material-demo/material-demo';
 import { Counter } from './components/counter/counter';
 import { TodoCrud } from './components/todo-crud/todo-crud';
+import { EmployeeList } from './components/employee-list/employee-list';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { TodoCrud } from './components/todo-crud/todo-crud';
     // Demo1,
     // MaterialDemo,
     // Counter
-    TodoCrud
+    // TodoCrud
+    EmployeeList
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
